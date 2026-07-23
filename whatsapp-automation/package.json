@@ -1,0 +1,24 @@
+{
+  "name": "good-invest-whatsapp-automation",
+  "version": "1.0.0",
+  "description": "Excel'den okunan numaralara WhatsApp Cloud API ile ilk mesajı gönderen ve gelen mesajlara otomatik yanıt veren servis",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "send-bulk": "tsx src/sendBulkMessages.ts",
+    "server": "tsx src/autoReplyServer.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
+  }
+}
