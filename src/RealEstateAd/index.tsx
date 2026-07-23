@@ -19,6 +19,7 @@ export const realEstateAdSchema = z.object({
   trustNumber: z.number(),
   trustCaption: z.string(),
   advisorPhoto: z.string(),
+  advisorName: z.string(),
   advisorCaption: z.string(),
   brandName: z.string(),
   headline: z.string(),
@@ -53,6 +54,7 @@ export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
   trustNumber,
   trustCaption,
   advisorPhoto,
+  advisorName,
   advisorCaption,
   brandName,
   headline,
@@ -125,8 +127,10 @@ export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
         <div style={{ marginTop: 60 }}>
           <AdvisorPhoto
             src={advisorPhoto}
+            name={advisorName}
             caption={advisorCaption}
             accentColor={accentColor}
+            textColor={textColor}
             delay={ADVISOR_PHOTO_DELAY}
           />
         </div>

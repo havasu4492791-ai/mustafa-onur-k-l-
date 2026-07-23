@@ -77,7 +77,8 @@ export const RemotionRoot: React.FC = () => {
           trustNumber: 500,
           trustCaption: "Aileye İzmir'de Ev Bulduk",
           advisorPhoto: staticFile("images/advisor.jpg"),
-          advisorCaption: "Size Özel Danışmanınız",
+          advisorName: "Mustafa Onur Kılıç",
+          advisorCaption: "Emlak Danışmanınız",
           brandName: "Good Invest",
           headline: "İzmir Merkezde Ev mi Arıyorsunuz?",
           benefits: [
@@ -108,7 +109,8 @@ export const RemotionRoot: React.FC = () => {
           trustNumber: 15,
           trustCaption: "Bu Ay Kalan Ücretsiz Danışmanlık Kontenjanı",
           advisorPhoto: staticFile("images/advisor.jpg"),
-          advisorCaption: "Size Özel Danışmanınız",
+          advisorName: "Mustafa Onur Kılıç",
+          advisorCaption: "Emlak Danışmanınız",
           brandName: "Good Invest",
           headline: "İlanda Olmayan Evleri Kaçırmayın",
           benefits: [
@@ -139,7 +141,8 @@ export const RemotionRoot: React.FC = () => {
           trustNumber: 500,
           trustCaption: "Aileye İzmir'de Ev Bulduk",
           advisorPhoto: staticFile("images/advisor.jpg"),
-          advisorCaption: "Size Özel Danışmanınız",
+          advisorName: "Mustafa Onur Kılıç",
+          advisorCaption: "Emlak Danışmanınız",
           brandName: "Good Invest",
           headline: "Gerçek Fiyatı Bilmeden Karar Vermeyin",
           benefits: [

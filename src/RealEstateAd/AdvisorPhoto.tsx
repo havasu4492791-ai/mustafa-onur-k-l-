@@ -2,10 +2,12 @@ import { Img, interpolate, spring, useCurrentFrame, useVideoConfig } from "remot
 
 export const AdvisorPhoto: React.FC<{
   src: string;
+  name: string;
   caption: string;
   accentColor: string;
+  textColor: string;
   delay: number;
-}> = ({ src, caption, accentColor, delay }) => {
+}> = ({ src, name, caption, accentColor, textColor, delay }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -45,8 +47,19 @@ export const AdvisorPhoto: React.FC<{
       </div>
       <div
         style={{
-          marginTop: 18,
-          fontSize: 26,
+          marginTop: 20,
+          fontSize: 32,
+          fontWeight: 700,
+          fontFamily: "SF Pro Text, Helvetica, Arial, sans-serif",
+          color: textColor,
+        }}
+      >
+        {name}
+      </div>
+      <div
+        style={{
+          marginTop: 4,
+          fontSize: 24,
           fontFamily: "SF Pro Text, Helvetica, Arial, sans-serif",
           color: accentColor,
         }}
