@@ -2,23 +2,24 @@ import { zColor } from "@remotion/zod-types";
 import {
   AbsoluteFill,
   interpolate,
-  Sequence,
   spring,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
 import { z } from "zod";
+import { AdvisorPhoto } from "./AdvisorPhoto";
 import { Background } from "./Background";
 import { Benefits } from "./Benefits";
 import { CtaButton } from "./CtaButton";
 import { Hook } from "./Hook";
-import { HouseIcon } from "./HouseIcon";
 import { TrustStat } from "./TrustStat";
 
 export const realEstateAdSchema = z.object({
   hookText: z.string(),
   trustNumber: z.number(),
   trustCaption: z.string(),
+  advisorPhoto: z.string(),
+  advisorCaption: z.string(),
   brandName: z.string(),
   headline: z.string(),
   benefits: z.array(z.string()),
@@ -41,7 +42,7 @@ const STAT_END = 102;
 // Everything below is offset so the branded pitch begins once the two
 // opening beats have finished.
 const MAIN_OFFSET = 100;
-const HOUSE_ICON_DELAY = MAIN_OFFSET + 10;
+const ADVISOR_PHOTO_DELAY = MAIN_OFFSET + 10;
 const HEADLINE_DELAY = MAIN_OFFSET + 45;
 const BENEFITS_START = MAIN_OFFSET + 95;
 const BENEFITS_STAGGER = 18;
@@ -51,6 +52,8 @@ export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
   hookText,
   trustNumber,
   trustCaption,
+  advisorPhoto,
+  advisorCaption,
   brandName,
   headline,
   benefits,
@@ -119,11 +122,14 @@ export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
           {brandName}
         </div>
 
-        <Sequence from={HOUSE_ICON_DELAY - 5} layout="none">
-          <div style={{ marginTop: 60 }}>
-            <HouseIcon color={accentColor} delay={5} />
-          </div>
-        </Sequence>
+        <div style={{ marginTop: 60 }}>
+          <AdvisorPhoto
+            src={advisorPhoto}
+            caption={advisorCaption}
+            accentColor={accentColor}
+            delay={ADVISOR_PHOTO_DELAY}
+          />
+        </div>
 
         <div
           style={{

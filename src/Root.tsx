@@ -1,5 +1,5 @@
 import "./index.css";
-import { Composition } from "remotion";
+import { Composition, staticFile } from "remotion";
 import { DataViz, dataVizSchema } from "./DataViz";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
@@ -76,6 +76,8 @@ export const RemotionRoot: React.FC = () => {
           hookText: "İzmir'de Ev Almadan Önce Bunu İzleyin",
           trustNumber: 500,
           trustCaption: "Aileye İzmir'de Ev Bulduk",
+          advisorPhoto: staticFile("images/advisor.jpg"),
+          advisorCaption: "Size Özel Danışmanınız",
           brandName: "Good Invest",
           headline: "İzmir Merkezde Ev mi Arıyorsunuz?",
           benefits: [
@@ -105,6 +107,8 @@ export const RemotionRoot: React.FC = () => {
           hookText: "Bu Ay Sadece 15 Aileye Özel Danışmanlık",
           trustNumber: 15,
           trustCaption: "Bu Ay Kalan Ücretsiz Danışmanlık Kontenjanı",
+          advisorPhoto: staticFile("images/advisor.jpg"),
+          advisorCaption: "Size Özel Danışmanınız",
           brandName: "Good Invest",
           headline: "İlanda Olmayan Evleri Kaçırmayın",
           benefits: [
@@ -134,6 +138,8 @@ export const RemotionRoot: React.FC = () => {
           hookText: "İlan Fiyatı ile Gerçek Fiyat Arasındaki Farkı Öğrenin",
           trustNumber: 500,
           trustCaption: "Aileye İzmir'de Ev Bulduk",
+          advisorPhoto: staticFile("images/advisor.jpg"),
+          advisorCaption: "Size Özel Danışmanınız",
           brandName: "Good Invest",
           headline: "Gerçek Fiyatı Bilmeden Karar Vermeyin",
           benefits: [
