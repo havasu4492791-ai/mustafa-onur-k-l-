@@ -1,5 +1,6 @@
 import "./index.css";
 import { Composition } from "remotion";
+import { DataViz, dataVizSchema } from "./DataViz";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
 
@@ -40,6 +41,25 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           logoColor1: "#91dAE2" as const,
           logoColor2: "#86A8E7" as const,
+        }}
+      />
+
+      <Composition
+        id="DataViz"
+        component={DataViz}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={dataVizSchema}
+        defaultProps={{
+          title: "Quarterly Revenue",
+          bars: [
+            { label: "Q1", value: 42, color: "#91EAE4" },
+            { label: "Q2", value: 68, color: "#86A8E7" },
+            { label: "Q3", value: 55, color: "#7F7FD5" },
+            { label: "Q4", value: 91, color: "#5B4FE9" },
+          ],
         }}
       />
     </>
