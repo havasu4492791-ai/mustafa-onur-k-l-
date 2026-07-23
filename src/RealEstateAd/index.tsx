@@ -11,9 +11,14 @@ import { z } from "zod";
 import { Background } from "./Background";
 import { Benefits } from "./Benefits";
 import { CtaButton } from "./CtaButton";
+import { Hook } from "./Hook";
 import { HouseIcon } from "./HouseIcon";
+import { TrustStat } from "./TrustStat";
 
 export const realEstateAdSchema = z.object({
+  hookText: z.string(),
+  trustNumber: z.number(),
+  trustCaption: z.string(),
   brandName: z.string(),
   headline: z.string(),
   benefits: z.array(z.string()),
@@ -23,13 +28,29 @@ export const realEstateAdSchema = z.object({
   textColor: zColor(),
 });
 
-const HOUSE_ICON_DELAY = 10;
-const HEADLINE_DELAY = 45;
-const BENEFITS_START = 95;
+// Opening beats: curiosity hook, then a trust-building stat, before the
+// branded pitch begins.
+const HOOK_START = 0;
+const HOOK_FADE_OUT = 38;
+const HOOK_END = 50;
+
+const STAT_START = 42;
+const STAT_FADE_OUT = 92;
+const STAT_END = 102;
+
+// Everything below is offset so the branded pitch begins once the two
+// opening beats have finished.
+const MAIN_OFFSET = 100;
+const HOUSE_ICON_DELAY = MAIN_OFFSET + 10;
+const HEADLINE_DELAY = MAIN_OFFSET + 45;
+const BENEFITS_START = MAIN_OFFSET + 95;
 const BENEFITS_STAGGER = 18;
-const CTA_DELAY = 215;
+const CTA_DELAY = MAIN_OFFSET + 215;
 
 export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
+  hookText,
+  trustNumber,
+  trustCaption,
   brandName,
   headline,
   benefits,
@@ -41,10 +62,12 @@ export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const brandOpacity = interpolate(frame, [0, 20], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const brandOpacity = interpolate(
+    frame,
+    [MAIN_OFFSET, MAIN_OFFSET + 20],
+    [0, 1],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
 
   const headlineProgress = spring({
     frame: frame - HEADLINE_DELAY,
@@ -57,6 +80,25 @@ export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
   return (
     <AbsoluteFill style={{ backgroundColor }}>
       <Background backgroundColor={backgroundColor} accentColor={accentColor} />
+
+      <Hook
+        text={hookText}
+        textColor={textColor}
+        accentColor={accentColor}
+        start={HOOK_START}
+        fadeOutStart={HOOK_FADE_OUT}
+        end={HOOK_END}
+      />
+
+      <TrustStat
+        value={trustNumber}
+        caption={trustCaption}
+        accentColor={accentColor}
+        textColor={textColor}
+        start={STAT_START}
+        fadeOutStart={STAT_FADE_OUT}
+        end={STAT_END}
+      />
 
       <AbsoluteFill
         style={{

@@ -67,12 +67,15 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="RealEstateAd"
         component={RealEstateAd}
-        durationInFrames={300}
+        durationInFrames={390}
         fps={30}
         width={1080}
         height={1920}
         schema={realEstateAdSchema}
         defaultProps={{
+          hookText: "İzmir'de Ev Almadan Önce Bunu İzleyin",
+          trustNumber: 500,
+          trustCaption: "Aileye İzmir'de Ev Bulduk",
           brandName: "Good Invest",
           headline: "İzmir Merkezde Ev mi Arıyorsunuz?",
           benefits: [
