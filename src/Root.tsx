@@ -177,9 +177,9 @@ export const RemotionRoot: React.FC = () => {
           advisorCaption: "Öğrenci Koçunuz",
           brandName: "Koçla Kazan",
           logoSrc: staticFile("images/kocla-kazan-logo.webp"),
-          headline: "Doğru Koçlukla Hedefine Ulaş",
+          headline: "LGS ve YKS'de Doğru Koçlukla Hedefine Ulaş",
           benefits: [
-            "Birebir Kişiye Özel Koçluk",
+            "LGS ve YKS'ye Özel Koçluk",
             "Düzenli Çalışma Programı",
             "Motivasyon ve Takip Desteği",
             "Veliye Düzenli Bilgilendirme",
