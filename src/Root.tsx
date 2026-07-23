@@ -73,12 +73,12 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         schema={realEstateAdSchema}
         defaultProps={{
-          brandName: "Marka Adınız",
-          headline: "Hayalinizdeki Evi Bulun",
+          brandName: "Good Invest",
+          headline: "İzmir Merkezde Ev mi Arıyorsunuz?",
           benefits: [
-            "Size Özel Portföy",
-            "Ücretsiz Danışmanlık",
-            "Hızlı ve Güvenilir Süreç",
+            "Ücretsiz Danışmanlık Hizmeti",
+            "Gerçek Fiyatlara Ulaşın",
+            "Geniş Danışman Ağımızla Destek",
           ],
           ctaText: "Formu Doldur",
           backgroundColor: "#0B1F3A",
