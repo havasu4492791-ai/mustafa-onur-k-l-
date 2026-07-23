@@ -158,6 +158,39 @@ export const RemotionRoot: React.FC = () => {
           textColor: "#F5F0E6",
         }}
       />
+
+      {/* Koçla Kazan: student-coaching lead-gen ad, reusing the same template */}
+      <Composition
+        id="KoclaKazanAd"
+        component={RealEstateAd}
+        durationInFrames={390}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={realEstateAdSchema}
+        defaultProps={{
+          hookText: "Ders Çalışıyor Ama Sonuç Alamıyor mu?",
+          trustNumber: 500,
+          trustCaption: "Öğrenciye Hedefine Ulaşmasında Destek Olduk",
+          advisorPhoto: staticFile("images/advisor.jpg"),
+          advisorName: "Mustafa Onur Kılıç",
+          advisorCaption: "Öğrenci Koçunuz",
+          brandName: "Koçla Kazan",
+          logoSrc: staticFile("images/kocla-kazan-logo.webp"),
+          headline: "Doğru Koçlukla Hedefine Ulaş",
+          benefits: [
+            "Birebir Kişiye Özel Koçluk",
+            "Düzenli Çalışma Programı",
+            "Motivasyon ve Takip Desteği",
+            "Veliye Düzenli Bilgilendirme",
+            "Ücretsiz Ön Görüşme",
+          ],
+          ctaText: "Formu Doldur",
+          backgroundColor: "#0B1B33",
+          accentColor: "#C9A227",
+          textColor: "#F5F0E6",
+        }}
+      />
     </>
   );
 };

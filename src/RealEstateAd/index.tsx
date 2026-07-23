@@ -1,6 +1,7 @@
 import { zColor } from "@remotion/zod-types";
 import {
   AbsoluteFill,
+  Img,
   interpolate,
   spring,
   useCurrentFrame,
@@ -22,6 +23,7 @@ export const realEstateAdSchema = z.object({
   advisorName: z.string(),
   advisorCaption: z.string(),
   brandName: z.string(),
+  logoSrc: z.string().optional(),
   headline: z.string(),
   benefits: z.array(z.string()),
   ctaText: z.string(),
@@ -57,6 +59,7 @@ export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
   advisorName,
   advisorCaption,
   brandName,
+  logoSrc,
   headline,
   benefits,
   ctaText,
@@ -111,18 +114,36 @@ export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
           paddingTop: 90,
         }}
       >
-        <div
-          style={{
-            fontSize: 32,
-            letterSpacing: 4,
-            fontFamily: "SF Pro Text, Helvetica, Arial, sans-serif",
-            color: accentColor,
-            opacity: brandOpacity,
-            textTransform: "uppercase",
-          }}
-        >
-          {brandName}
-        </div>
+        {logoSrc ? (
+          <div
+            style={{
+              width: 170,
+              height: 170,
+              borderRadius: "50%",
+              overflow: "hidden",
+              opacity: brandOpacity,
+            }}
+          >
+            <Img
+              src={logoSrc}
+              alt={brandName}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+        ) : (
+          <div
+            style={{
+              fontSize: 32,
+              letterSpacing: 4,
+              fontFamily: "SF Pro Text, Helvetica, Arial, sans-serif",
+              color: accentColor,
+              opacity: brandOpacity,
+              textTransform: "uppercase",
+            }}
+          >
+            {brandName}
+          </div>
+        )}
 
         <div style={{ marginTop: 60 }}>
           <AdvisorPhoto
