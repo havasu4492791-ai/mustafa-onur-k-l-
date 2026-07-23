@@ -25,9 +25,9 @@ export const realEstateAdSchema = z.object({
 
 const HOUSE_ICON_DELAY = 10;
 const HEADLINE_DELAY = 45;
-const BENEFITS_START = 100;
-const BENEFITS_STAGGER = 22;
-const CTA_DELAY = 175;
+const BENEFITS_START = 95;
+const BENEFITS_STAGGER = 18;
+const CTA_DELAY = 215;
 
 export const RealEstateAd: React.FC<z.infer<typeof realEstateAdSchema>> = ({
   brandName,

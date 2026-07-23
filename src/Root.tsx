@@ -67,7 +67,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="RealEstateAd"
         component={RealEstateAd}
-        durationInFrames={240}
+        durationInFrames={300}
         fps={30}
         width={1080}
         height={1920}
@@ -79,6 +79,8 @@ export const RemotionRoot: React.FC = () => {
             "Ücretsiz Danışmanlık Hizmeti",
             "Gerçek Fiyatlara Ulaşın",
             "Geniş Danışman Ağımızla Destek",
+            "Sizi Aynı Gün Arayalım",
+            "İlanda Olmayan Evleri de Sunalım",
           ],
           ctaText: "Formu Doldur",
           backgroundColor: "#0B1F3A",
