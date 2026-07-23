@@ -91,6 +91,64 @@ export const RemotionRoot: React.FC = () => {
           textColor: "#F5F0E6",
         }}
       />
+
+      {/* Variant B: scarcity / urgency angle, warm terracotta theme */}
+      <Composition
+        id="RealEstateAdScarcity"
+        component={RealEstateAd}
+        durationInFrames={390}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={realEstateAdSchema}
+        defaultProps={{
+          hookText: "Bu Ay Sadece 15 Aileye Özel Danışmanlık",
+          trustNumber: 15,
+          trustCaption: "Bu Ay Kalan Ücretsiz Danışmanlık Kontenjanı",
+          brandName: "Good Invest",
+          headline: "İlanda Olmayan Evleri Kaçırmayın",
+          benefits: [
+            "Bu Ay Sınırlı Kontenjan",
+            "İlanda Olmayan Evlere Erişim",
+            "Sizi Aynı Gün Arayalım",
+            "Ücretsiz Fiyat Analizi Raporu",
+            "Hiçbir Taahhüt Yok",
+          ],
+          ctaText: "Hemen Başvur",
+          backgroundColor: "#5C2A1D",
+          accentColor: "#E07A5F",
+          textColor: "#F5F0E6",
+        }}
+      />
+
+      {/* Variant C: price-gap curiosity angle, modern purple/turquoise theme */}
+      <Composition
+        id="RealEstateAdModern"
+        component={RealEstateAd}
+        durationInFrames={390}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={realEstateAdSchema}
+        defaultProps={{
+          hookText: "İlan Fiyatı ile Gerçek Fiyat Arasındaki Farkı Öğrenin",
+          trustNumber: 500,
+          trustCaption: "Aileye İzmir'de Ev Bulduk",
+          brandName: "Good Invest",
+          headline: "Gerçek Fiyatı Bilmeden Karar Vermeyin",
+          benefits: [
+            "Gerçek Fiyatlara Ulaşın",
+            "Size Özel Portföy",
+            "Geniş Danışman Ağımızla Destek",
+            "Sizi Aynı Gün Arayalım",
+            "Ücretsiz Fiyat Analizi",
+          ],
+          ctaText: "Formu Doldur",
+          backgroundColor: "#3B1F63",
+          accentColor: "#2DD4BF",
+          textColor: "#F5F0E6",
+        }}
+      />
     </>
   );
 };

@@ -11,7 +11,7 @@ export const Background: React.FC<{
   return (
     <AbsoluteFill
       style={{
-        background: `linear-gradient(160deg, ${backgroundColor} 0%, #060e1f 100%)`,
+        background: `linear-gradient(160deg, ${backgroundColor} 0%, color-mix(in srgb, ${backgroundColor} 35%, black) 100%)`,
       }}
     >
       <div
