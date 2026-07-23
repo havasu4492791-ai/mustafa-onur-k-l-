@@ -3,6 +3,7 @@ import { Composition } from "remotion";
 import { DataViz, dataVizSchema } from "./DataViz";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { RealEstateAd, realEstateAdSchema } from "./RealEstateAd";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -60,6 +61,29 @@ export const RemotionRoot: React.FC = () => {
             { label: "Q3", value: 55, color: "#7F7FD5" },
             { label: "Q4", value: 91, color: "#5B4FE9" },
           ],
+        }}
+      />
+
+      <Composition
+        id="RealEstateAd"
+        component={RealEstateAd}
+        durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={realEstateAdSchema}
+        defaultProps={{
+          brandName: "Marka Adınız",
+          headline: "Hayalinizdeki Evi Bulun",
+          benefits: [
+            "Size Özel Portföy",
+            "Ücretsiz Danışmanlık",
+            "Hızlı ve Güvenilir Süreç",
+          ],
+          ctaText: "Formu Doldur",
+          backgroundColor: "#0B1F3A",
+          accentColor: "#D4AF37",
+          textColor: "#F5F0E6",
         }}
       />
     </>
